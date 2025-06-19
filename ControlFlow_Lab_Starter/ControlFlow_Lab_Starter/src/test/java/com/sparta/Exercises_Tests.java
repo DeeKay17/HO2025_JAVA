@@ -6,30 +6,32 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class Exercises_Tests {
     @Test
     @DisplayName("Given a temperature less than 15, getForecast returns It's cold")
     public void getForecast_Cold() {
-        Assertions.assertEquals("It's cold", Exercises.getForecast(14) );
+        assertEquals("It's cold", Exercises.getForecast(14) );
     }
 
     @Test
     @DisplayName("Given a temperature of 15, getForecast returns It's hot")
     public void getForecast_Hot() {
-        Assertions.assertEquals("It's hot", Exercises.getForecast(15) );
+        assertEquals("It's hot", Exercises.getForecast(15) );
     }
 
     @Test
     @DisplayName("Given a temperature over 15, getForecast returns It's hot")
     public void getForecast_Over15_Hot() {
-        Assertions.assertEquals("It's hot", Exercises.getForecast(125));
+        assertEquals("It's hot", Exercises.getForecast(125));
     }
     @Test
     @DisplayName("Average returns correct average")
     public void Average_ReturnsCorrectAverage()
     {
         int[] nums = { 3, 8, 1, 7, 3 };
-        Assertions.assertEquals(4.4, Exercises.average(nums));
+        assertEquals(4.4, Exercises.average(nums));
     }
 
     @Test
@@ -37,7 +39,7 @@ public class Exercises_Tests {
     public void WhenArrayIsEmpty_Average_ReturnsZero()
     {
         int[] nums = {  };
-        Assertions.assertEquals(0, Exercises.average(nums));
+        assertEquals(0, Exercises.average(nums));
     }
 
     @ParameterizedTest
@@ -57,10 +59,25 @@ public class Exercises_Tests {
     public void TicketTypeTest(int age, String expected)
     {
         var result = Exercises.ticketType(age);
-        Assertions.assertEquals(expected, result);
+        assertEquals(expected, result);
     }
 
     // write unit tests for the 'Grade' method here
+
+        @Test
+        public void testGetGradeFail() {
+            assertEquals("Fail", Exercises.universityGrading(20));
+        }
+         @Test
+    public void testGetGradeDistinction() {
+        assertEquals("Pass with Distinction", Exercises.universityGrading(95));}
+    @Test
+    public void testGetGradeMerit() {
+        assertEquals("Pass with Merit", Exercises.universityGrading(62));}
+
+    @Test
+    public void testGetGradePass() {
+        assertEquals("Pass", Exercises.universityGrading(45));}
 
     // write unit tests for the Scottish wedding example here
 }
