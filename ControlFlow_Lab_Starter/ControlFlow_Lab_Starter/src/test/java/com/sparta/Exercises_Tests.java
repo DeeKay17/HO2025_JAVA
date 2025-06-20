@@ -80,4 +80,28 @@ public class Exercises_Tests {
         assertEquals("Pass", Exercises.universityGrading(45));}
 
     // write unit tests for the Scottish wedding example here
+    @Test
+    public void levelFourCovidLevel() {
+        assertEquals(20, Exercises.maxAttendees(4));
+    }
+    @Test
+    public void levelThreeCovidLevel() {
+        assertEquals(50, Exercises.maxAttendees(3));
+    }
+    @Test
+    public void levelTwoCovidLevel() {
+        assertEquals(50, Exercises.maxAttendees(2));
+    }
+    @Test
+    public void levelOneCovidLevel() {
+        assertEquals(100, Exercises.maxAttendees(1));
+    }
+    @Test
+    public void levelZeroCovidLevel() {
+        assertEquals(200, Exercises.maxAttendees(0));
+    }
+    @Test
+    public void levelFailCovidLevel() {
+        assertEquals(0, Exercises.maxAttendees(-1));
+    }
 }

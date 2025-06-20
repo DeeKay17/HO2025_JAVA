@@ -68,11 +68,29 @@ return forecast;
     }
 
     // Question 5
-    public static int getScottishMaxWeddingNumber(int covidLevel)
-    {
-        return 0;
+    //10:15am 20/06/2025 refer to recording to refer to this
+    public static int maxAttendees(int alertLevel) {
+    int attendees;
+    switch (alertLevel) {
+        case 4:
+            attendees = 20;
+            break;
+        case 3:
+        case 2:
+            attendees = 50;
+            break;
+        case 1:
+            attendees = 100;
+            break;
+        case 0:
+            attendees = 200;
+            break;
+        default:
+            attendees = 0;
+            break;
     }
-    String covidLevelreturn = "covidLevel";
+    return attendees;
+
 //        switch (covidLevel) {
 //            public static int getScottishMaxWeddingNumber(int covidLevel) {
 //    int maxAttendees;
@@ -95,5 +113,5 @@ return forecast;
 //            maxAttendees = 0; // Return 0 for unknown levels
 //            break;
 //    }
-
+    }
 }
